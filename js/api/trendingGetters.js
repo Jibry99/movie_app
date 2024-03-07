@@ -11,7 +11,7 @@ const opts = {
 
 export const getTrending = async (baseUrl) => {
 
-    const response = await fetch(baseUrl + 'all/day?language=en-US', opts);
+    const response = await fetch(baseUrl + 'trending/all/day?language=en-US', opts);
 
     const data = await response.json();
 
@@ -29,7 +29,17 @@ getTrending();
 
 export const getTrendingMovie = async (baseUrl) => {
 
-    const response = await fetch(baseUrl + 'movie/day?language=en-US', opts);
+    const response = await fetch(baseUrl + 'trending/movie/day?language=en-US', opts);
+
+    const data = await response.json();
+
+    return data;
+}
+
+
+export const getSearchPeople = async (baseUrl) => {
+
+    const response = await fetch(baseUrl + 'search/person'+ '?query=Jason Statham', opts);
 
     const data = await response.json();
 
