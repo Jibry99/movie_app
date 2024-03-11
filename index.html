@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1 id= "header">Movie Ap</h1>
+</body>
+<script type="module">
+   import {getTrendingMovie, fixTitle, addParagraph} from "./js/api/index2.js";
+    console.log("prova");
+    getTrendingMovie().then(data => {
+  data.results.forEach(movie => {
+      console.log("ID: " + movie.id);
+      console.log("Poster_path: " + movie.poster_path);
+      console.log("Title: " + movie.title);
+      console.log("Vote_average: " + movie.vote_average);
+      console.log("Media_type: " + movie.media_type );
+      console.log("Release_date: " + movie.release_date + "\n");
+      console.log("\n");
+  });
+});
+
+    fixTitle();
+    addParagraph();
+</script>
+</html>
