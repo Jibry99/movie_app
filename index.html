@@ -1,29 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title></title>
 </head>
+
 <body>
-    <h1 id= "header">Movie Ap</h1>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Serie TV</a></li>
+            <li><a href="#">Film</a></li>
+            <li><a href="#">Nuove uscite</a></li>
+            <li><a href="#">La mia lista</a></li>
+        </ul>
+    </nav>
+
+    <div id="movieCard">
+        <h2 class="filmh2">FILM DI TENDENZA</h2>
+    </div>
+
+    <div id="seriesCard">
+        <h2 class="seriesh2">SERIE DI TENDENZA</h2>
+    </div>
 </body>
 <script type="module">
-   import {getTrendingMovie, fixTitle, addParagraph} from "./js/api/index2.js";
-    console.log("prova");
-    getTrendingMovie().then(data => {
-  data.results.forEach(movie => {
-      console.log("ID: " + movie.id);
-      console.log("Poster_path: " + movie.poster_path);
-      console.log("Title: " + movie.title);
-      console.log("Vote_average: " + movie.vote_average);
-      console.log("Media_type: " + movie.media_type );
-      console.log("Release_date: " + movie.release_date + "\n");
-      console.log("\n");
-  });
-});
+    import { getTrendingMovie, getTrendingSeries, createTrendingMoviesList, getTrending, createTrendingList, createTrendingSeriesList } from "./js/api/index2.js";
 
-    fixTitle();
-    addParagraph();
+    // const getDatasAsynch = async () => {
+    //     const trendingMovies = await getTrendingMovie();
+    //     const trendingSeries = await getTrendingSeries();
+
+    //     createTrendingMoviesList(trendingMovies, "movieCard");
+    //     createTrendingSeriesList(trendingSeries, "seriesCard");
+    // }
+    // getDatasAsynch();
+
+     getTrendingMovie().then(
+        (trendingMovies) => {
+            createTrendingMoviesList(trendingMovies, "movieCard");
+        }
+     )
+    
+    
+    getTrendingSeries().then(
+        (trendingSeries)=> {
+            createTrendingSeriesList(trendingSeries, "seriesCard");
+        }
+    )
+
+        
+        
+
+    
+
+    // const allTrendings = await getTrending();
+    
+    //createTrendingList(allTrendings);
 </script>
+
 </html>

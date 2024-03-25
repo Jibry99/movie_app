@@ -1,0 +1,145 @@
+body {
+  background-color: #000000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  opacity: 0;
+}
+
+.navbar:hover {
+  opacity: 1
+  ;
+}
+
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-right: 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+
+
+.seriesCard {
+  display: inline-block; /* Disponi le card orizzontalmente */
+  width: 500px; /* Larghezza della card */
+  margin: 0 10px; /* Margine tra le card */
+  border-radius: 8px; /* Bordo arrotondato */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombra */
+  transition: transform 0.3s ease; /* Animazione di trasformazione */
+  cursor: pointer; /* Cambia il cursore al passaggio */
+  overflow: hidden; /* Nasconde il contenuto che fuoriesce */
+  height: 500px; /* Altezza fissa della card */
+}
+
+.seriesh2 {
+  color: #fff;
+}
+
+.filmh2 {
+  color: #fff;
+}
+
+/* Stile per il contenitore delle card che scorre orizzontalmente */
+.horizontalScroll {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* Stile per le card dei film */
+.movieCard {
+  display: inline-block; /* Disponi le card orizzontalmente */
+  width: 400px; /* Larghezza della card */
+  margin: 0 20px; /* Margine tra le card */
+  border-radius: 8px; /* Bordo arrotondato */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombra */
+  transition: transform 1.2s ease; /* Animazione di trasformazione */
+  cursor: pointer; /* Cambia il cursore al passaggio */
+  overflow: hidden; /* Nasconde il contenuto che fuoriesce */
+  height: 400px; /* Altezza fissa della card */
+}
+
+/* Effetto ombra al passaggio del mouse */
+.movieCard:hover {
+  transform: translateY(-5px); /* Sposta leggermente la card verso l'alto */
+  transform: scale(1.3);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Ombra più accentuata */
+  background-color: #ffffff;
+}
+
+/* Immagine del film */
+.movieCard img {
+  width: 100%; /* Larghezza dell'immagine al 100% */
+  height: auto; /* Altezza del 100% rispetto alla card */
+  object-fit: contain; /* Copre l'intera area dell'immagine */
+  border-top-left-radius: 8px; /* Bordo arrotondato solo nell'angolo superiore sinistro */
+  border-top-right-radius: 8px; /* Bordo arrotondato solo nell'angolo superiore destro */
+}
+
+/* Contenitore del testo (titolo e descrizione) */
+.movieCard .textContainer {
+  padding: 10px; /* Spaziatura interna */
+  background-color: #000; /* Colore di sfondo */
+  color: #fff; /* Colore del testo */
+  height: 0; /* Nasconde il testo per impostazione predefinita */
+  overflow: ellipsis; /* Nasconde il testo che fuoriesce */
+  transition: height 0.3s ease; /* Animazione di altezza */
+}
+
+/* Testo visibile al passaggio del mouse */
+.movieCard:hover .textContainer {
+  height: auto; /* Altezza automatica quando la card è selezionata */
+}
+
+/* Titolo del film */
+.movieCard h1 {
+  margin: 0; /* Margine zero */
+  color: #000000;
+  font-size: 18px; /* Dimensione del carattere */
+  margin-bottom: 5px; /* Margine inferiore */
+  text-align: center;
+  opacity: 0;
+}
+
+
+/* Descrizione del film */
+.movieCard p {
+  margin: 0; /* Margine zero */
+  color: #000000;
+  font-size: 12px; /* Dimensione del carattere */
+  white-space: normal;
+  opacity: 0;
+  text-align: center;
+}
+
+.movieCard:hover p {
+  opacity: 1;
+}
+
+.movieCard:hover img {
+  opacity: 0;
+}
+
+.movieCard:hover h1 {
+  opacity: 1;
+}
+

@@ -14,6 +14,7 @@ export const getTrending = async () => {
     return data;
 }
 
+//getTrending();
 
 /** getTrendingMovies 
  *
@@ -25,7 +26,17 @@ getTrending();
 
 export const getTrendingMovie = async () => {
 
-    const response = await fetch(BASE_URL + 'trending/movie/day?language=en-US', OPTS);
+    const response = await fetch(BASE_URL + 'trending/movie/day?', OPTS);
+
+    const data = await response.json();
+
+    return data;
+}
+
+
+export const getTrendingSeries = async () => {
+
+    const response = await fetch(BASE_URL + 'trending/tv/day?', OPTS);
 
     const data = await response.json();
 
