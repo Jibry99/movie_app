@@ -1,5 +1,5 @@
-import { BASE_URL } from "./api/config.js";
-import { getTrending, getTrendingMovie, getSearchPeople } from "./api/trendingGetters.js";
+import { BASE_URL } from "./js/api/config.js";
+import { getTrending, getTrendingMovie, getSearchPeople } from "./js/api/trendingGetters.js";
 
 
 
