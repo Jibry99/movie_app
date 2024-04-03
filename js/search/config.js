@@ -1,0 +1,1 @@
+export const BASE_SEARCH_URL= "https://api.themoviedb.org/3/search/movie?query="

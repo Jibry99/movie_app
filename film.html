@@ -26,69 +26,22 @@
           </div>
         </div>
       </nav>
-      
-      <input id="query-input" type="text" placeholder="Cerca un film.. ">
-      <button id="btn-search" onclick="handleSearch">Cerca</button>
-
 
     <div id="movieCard"></div>
 
-    <div id="searchCard"></div>
-
-    <div id="seriesCard"></div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body >
+</body>
 <script type="module">
     import {getTrendingMovie, getTrendingSeries, getTrending} from "./js/api/trendingGetters.js"
-    import {createTrendingMoviesList,createTrendingSeriesList} from "./js/dom-manipulator/createList.js"
-    import{handleSearch} from "./js/search/handleSearch.js"
-
-    window.handleSearch = handleSearch;
-
-    // const getDatasAsynch = async () => {
-    //     const trendingMovies = await getTrendingMovie();
-    //     const trendingSeries = await getTrendingSeries();
-
-    //     createTrendingMoviesList(trendingMovies, "movieCard");
-    //     createTrendingSeriesList(trendingSeries, "seriesCard");
-    // }
-    // getDatasAsynch();
-/*
-     getTrendingMovie().then(
-        (trendingMovies) => {
-            createTrendingMoviesList(trendingMovies, "movieCard");
-        }
-     )
-    
-    */
-
-  
-    getTrendingSeries().then(
-        (trendingSeries)=> {
-            createTrendingSeriesList(trendingSeries, "seriesCard");
-        }
-    )
-
+    import {createTrendingMoviesList} from "./js/dom-manipulator/createList.js"
+   
     getTrendingMovie().then(
         (trendingMovies)=> {
-            createTrendingMoviesList2(trendingMovies, "movieCard");
+            createTrendingMoviesList(trendingMovies, "movieCard");
         }
     )
         
 
-
-
-
-
-
-
-
-    
-
-  //  const allTrendings = await getTrending();
-    
-  //  createTrendingList(allTrendings);
 </script>
 
 </html>
